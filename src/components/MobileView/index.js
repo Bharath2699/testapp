@@ -17,6 +17,7 @@ const MobileView=()=>{
                 setMessage("Congratulations! Ypur answer is correct")
                 if(index<Questions.length){
                     setIndex(prev=>prev+1)
+                    setQuestion(Questions[index])
                 }
             }else{
                 setMessage("Sorry! Your answer is not correct")
@@ -42,6 +43,7 @@ const MobileView=()=>{
             className="answer"
             />
             <button type="button" onClick={handletheAnswer}>Submit</button>
+            {message&& <p>{message}</p>}
         </div>
        
     )
