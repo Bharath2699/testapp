@@ -2,7 +2,7 @@ import QRCode from "react-qr-code"
 import "./index.css"
  
 const DesktopView=()=>{
-    const qrvalue="http://localhost:3004/play"
+    const qrvalue="https://mytestapplication.netlify.app/play"
 
      return(
         <div>
