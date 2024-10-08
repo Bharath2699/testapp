@@ -8,7 +8,7 @@ const Questions=[
 
 const MobileView=()=>{
     const [index,setIndex]=useState(0);
-        const [question,setQuestion]=useState(Questions[index]);
+        const [question,setQuestion]=useState(Questions[index].question);
         const [name,setName]=useState();
         const [answer,setAnswer]=useState();
         const [message,setMessage]=useState();
@@ -17,7 +17,7 @@ const MobileView=()=>{
                 setMessage("Congratulations! Ypur answer is correct")
                 if(index<Questions.length){
                     setIndex(prev=>prev+1)
-                    setQuestion(Questions[index])
+                    setQuestion(Questions[index].question)
                 }
             }else{
                 setMessage("Sorry! Your answer is not correct")
@@ -26,7 +26,6 @@ const MobileView=()=>{
 
     return(
         <div>
-            {name&&<h1>`Hello ${name}`</h1>}
             {!name&&
             <input value={name}
             onChange={(e)=>setName(e.target.value)}
@@ -34,7 +33,7 @@ const MobileView=()=>{
             className="name"
             />
             }
-            <p>{question}</p>
+            <p>{JSON.stringify(question)}</p>
             <p>Enter the answer for the above Question</p>
             <input 
             value={answer}
